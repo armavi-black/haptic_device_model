@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="haptic_device_model">
+  <link name="world"/>
+  <!-- BASE LINK -->
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-2.16840434497101E-18 -1.08653387720525E-18 -0.0394930512413517"
+        rpy="0 0 0" />
+      <mass
+        value="2.89599350389818" />
+      <inertia
+        ixx="0.0074821"
+        ixy="0.000000"
+        ixz="0.000000"
+        iyy="0.0146303"
+        iyz="0.000000"
+        izz="0.01882309" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haptic_device_model/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haptic_device_model/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fixed" type="fixed">
+     <origin
+      xyz="0 0 0.10"
+      rpy="0 0 0" />
+     <parent link="world"/>
+     <child link="base_link"/>
+  </joint>
+
+  <!-- LINK 1 -->
+  <link
+    name="Link1">
+    <inertial>
+      <origin
+        xyz="3.81639164714898E-17 -9.71445146547012E-17 0.0812452447641558"
+        rpy="0 0 0" />
+      <mass
+        value="0.178941551187451" />
+      <inertia
+        ixx="0.0007524"
+        ixy="0.000000"
+        ixz="0.000000"
+        iyy="0.00189805"
+        iyz="0.000000"
+        izz="0.00227463" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707 0 3.1416" />
+      <geometry>
+        <mesh
+          filename="package://haptic_device_model/meshes/Link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haptic_device_model/meshes/Link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Jnt1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5708"
+      effort="100"
+      velocity="0.5" />
+  </joint>
+
+  <!-- LINK 2 -->
+  <link
+    name="Link2">
+    <inertial>
+      <origin
+        xyz="-5.24753851482984E-17 -0.00781690704969398 0.0165307689111083"
+        rpy="0 0 0" />
+      <mass
+        value="0.236662453777598" />
+      <inertia
+        ixx="0.00097295"
+        ixy="0.000000"
+        ixz="-0.00000011"
+        iyy="0.00173668"
+        iyz="0.00000364"
+        izz="0.00077699" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haptic_device_model/meshes/Link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haptic_device_model/meshes/Link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Jnt2"
+    type="revolute">
+    <origin
+      xyz="0 0.105 0"
+      rpy="0 0 0" />
+    <parent
+      link="Link1" />
+    <child
+      link="Link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.5707"
+      upper="3.1415"
+      effort="100"
+      velocity="0.5" />
+  </joint>
+
+  <!-- END EFFECTOR -->
+  <link
+    name="EndEff">
+    <inertial>
+      <origin
+        xyz="1.47451495458029E-17 -0.0675000000000001 0.052375"
+        rpy="0 0 0" />
+      <mass
+        value="0.4" />
+      <inertia
+        ixx="0.00186061"
+        ixy="0.000000"
+        ixz="0.000000"
+        iyy="0.00033521"
+        iyz="0.00034087"
+        izz="0.00173467" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haptic_device_model/meshes/EndEff.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://haptic_device_model/meshes/EndEff.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="JntEnd"
+    type="fixed">
+    <origin
+      xyz="0 0.19 0"
+      rpy="0 0 0" />
+    <parent
+      link="Link2" />
+    <child
+      link="EndEff" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <!-- This block connects the Jnt1 joint to an actuator (motor), which informs both
+  simulation and visualization of the robot -->
+  <transmission name="Jnt1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="$Jnt1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="Jnt1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+  
+  <transmission name="Jnt2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="$Jnt2_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="Jnt2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+  
+  <!-- Gazebo plugin for ROS Control -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+  
+</robot>

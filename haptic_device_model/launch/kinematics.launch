@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    <group ns="xArm">
+        <include file="$(find xarm_planner)/launch/xarm_planner_rviz_sim_haptics_simulator.launch"/>
+    </group>
+    
+    <group ns="haptic">
+        <include file="$(find haptic_device_model)/launch/display.launch"/>
+    </group>
+    
+    <node name="directKinematics" pkg="haptic_device_model" type="directKinematics.py" output="screen"/>
+
+</launch>
